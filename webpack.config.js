@@ -12,16 +12,20 @@ module.exports = {
 	},
 	module: {
 		rules: [{
-				test: /\.(js|jsx)$/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env'],
-						plugins: [require('@babel/plugin-proposal-class-properties')]
-					}
+			test: /\.(js)$/,
+			oneOf: [{
+				loader: 'babel-loader',
+				exclude: /node_modules/,
+				options: {
+					presets: ['@babel/preset-env'],
+					plugins: [require('@babel/plugin-proposal-class-properties')]
 				}
-			},
-		],
+			}, {
+				enforce: "pre",
+				exclude: /node_modules/,
+				loader: "eslint-loader",
+			}]
+		}],
 	},
 	resolve: {
 		extensions: [".js", ".json"]
