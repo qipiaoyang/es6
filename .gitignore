@@ -1,4 +1,4 @@
-*.project
-*.yarn.lock
-*.yarn-error.log
+.project
+.yarn.lock
+.yarn-error.log
 node_modules
