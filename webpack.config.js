@@ -20,10 +20,6 @@ module.exports = {
 					presets: ['@babel/preset-env'],
 					plugins: [require('@babel/plugin-proposal-class-properties')]
 				}
-			}, {
-				enforce: "pre",
-				exclude: /node_modules/,
-				loader: "eslint-loader",
 			}]
 		}],
 	},
