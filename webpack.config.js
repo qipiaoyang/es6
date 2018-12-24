@@ -13,14 +13,19 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.(js)$/,
-			oneOf: [{
-				loader: 'babel-loader',
-				exclude: /node_modules/,
-				options: {
-					presets: ['@babel/preset-env'],
-					plugins: [require('@babel/plugin-proposal-class-properties')]
-				}
-			}]
+			use: [
+				{
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env'],
+						plugins: [require('@babel/plugin-proposal-class-properties')]
+					}
+				}, {
+					loader: 'eslint-loader',
+					options: {
+						formatter: require("eslint-friendly-formatter"),
+					}
+				}]
 		}],
 	},
 	resolve: {
