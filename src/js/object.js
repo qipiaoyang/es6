@@ -1,6 +1,5 @@
-// 1.属性简写
 
-const foo = "bar";
+const foo = "bar";// 1.属性简写
 const baz = { foo };
 console.log(baz); // {foo: "bar"}
 
@@ -47,7 +46,7 @@ Object.defineProperties(consoleObj, {
         enumerable: true,
     }
 });
-for( k in consoleObj ) {
+for(let k in consoleObj ) {
     _arr.push(k)
 }
 console.log(consoleObj);

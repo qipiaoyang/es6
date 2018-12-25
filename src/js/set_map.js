@@ -9,6 +9,6 @@ console.log(s.has(7));// true 判断Set数据结构里面是否存在该元素
 
 
 let a = 5;
-if(a == 5) {
+if(a === 5) {
     console.log(123)
 }
